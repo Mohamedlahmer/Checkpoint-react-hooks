@@ -68,7 +68,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchAppBar({handleData,handleValue}) {
+
+
+export default function SearchAppBar({handledata,handlevalue}) {
   const classes = useStyles();
 
   const [Data, setData] = useState("")
@@ -78,7 +80,7 @@ export default function SearchAppBar({handleData,handleValue}) {
       setData(e.target.value)
     }
 
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
 
 
   return (
@@ -88,14 +90,13 @@ export default function SearchAppBar({handleData,handleValue}) {
           <Typography className={classes.title} variant="h6" noWrap style={{color:'yellow'}}>
             Movie Night
           </Typography>
-
             <Rating
             name="simple-controlled"
             value={value}
             onChange={(event, newValue) => {
                   setValue(newValue)
                 }}
-            handleValue={handleValue(value)}
+                handlevalue={handlevalue(value)}
               />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -110,7 +111,7 @@ export default function SearchAppBar({handleData,handleValue}) {
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleChange}
               value={Data}
-              handleData={handleData(Data)}
+              handledata={handledata(Data)}
             />
             {/* <Button onClick={() => handleData(Data)} variant="contained">Search</Button>  */}
           </div>

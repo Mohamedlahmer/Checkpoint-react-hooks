@@ -20,8 +20,8 @@ const MovieCard = ({ movie, handleData }) => {
         />
         <Card.Body className="cardbody">
           <Card.Title className="movietitle">{movie.name}</Card.Title>
-          <Card.Text className="movieinfo">
-            <li>Type : {movie.type}</li>
+          <div className="movieinfo">
+          <li>Type : {movie.type}</li>
             <li>Description : {movie.description}</li>
             {/* <li>Rating : {movie.rating}</li> */}
             <li>Date : {movie.date}</li>
@@ -30,8 +30,9 @@ const MovieCard = ({ movie, handleData }) => {
              {/* <Typography component="legend">Read only</Typography> */}
              <Rating name="read-only" value={movie.rating} readOnly />
              </Box>
+          </div>
+           
              
-          </Card.Text>
           <Button
             variant="warning"
             onClick={() => handleData(movie.name, movie.date)}

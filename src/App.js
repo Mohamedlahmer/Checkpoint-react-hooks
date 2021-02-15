@@ -9,12 +9,12 @@ import './App.css';
 function App() {
 
 const [Input, setInput] = useState("")
-const handleData = (Input) =>{
+const handledata = (Input) =>{
   setInput(Input)
 }
 
 const [value, setValue] = useState(2)
-const handleValue = (value) => {
+const handlevalue = (value) => {
   setValue(value)
 }
 
@@ -30,7 +30,7 @@ const handleDataMovie = (DataMovie) =>{
   return (
     <div>
      
-      <NavBar handleData={handleData} handleValue={handleValue}/>
+      <NavBar handledata={handledata} handlevalue={handlevalue}/>
       <MoviesList Input={Input} value={value} DataMovie={DataMovie}/>
       <AddMovie handleDataMovie={handleDataMovie}/>
       <Footer/>

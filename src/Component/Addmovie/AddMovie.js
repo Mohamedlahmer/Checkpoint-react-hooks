@@ -44,9 +44,9 @@ export default function SimpleModal({handleDataMovie}) {
     setOpen(false);
   };
 
-const [id, setId] = useState("")
+
 const [image, setImage] = useState("")
-const [rating, setRating] = useState("")
+const [rating, setRating] = useState(0)
 const [name, setName] = useState("")
 const [date, setDate] = useState("")
 const [type, setType] = useState("")
@@ -59,9 +59,6 @@ const [description, setDescription] = useState("")
     <div style={modalStyle} className={classes.paper}>
       <h4 id="simple-modal-title">
           <form>
-          <label>id</label>
-          <br/>
-          <input onChange={(e)=> setId(e.target.value)}/>
           <label>image</label>
           <input onChange={(e)=> setImage(e.target.value)}/>
           <label>rating</label>
@@ -83,7 +80,7 @@ const [description, setDescription] = useState("")
       <p id="simple-modal-description">
         Click Add movie when you are done 
       </p>
-      <Button onClick={(e)=> {e.preventDefault() ;handleDataMovie({id,image,rating,name,date,type,description})}} variant="contained" color="secondary">Add movie</Button>
+      <Button onClick={(e)=> {e.preventDefault() ;handleDataMovie({id:Math.random(),image,rating,name,date,type,description})}} variant="contained" color="secondary">Add movie</Button>
     </div>
   );
 
