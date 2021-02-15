@@ -1,8 +1,11 @@
 
-import React from 'react'
+import React, { useState } from 'react'
+import MovieCard from '../MovieCard/MovieCard'
+import '../MovieList/MoviesList.css'
 
 
-const MoviesList = () => {
+
+const MoviesList = ({Input,value,DataMovie}) => {
 
     let moviesData = [
         {
@@ -86,19 +89,38 @@ const MoviesList = () => {
         },
       ];
 
+      const handleData = (name,date) => {
+          alert(`the movie "${name}" was released back in ${date}`)
+      }
+
+
+if(Input.length>0){
+  moviesData=moviesData.filter ( (el)=>{
+    return el.name.toLowerCase().match(Input.toLowerCase())
+  })
+}
+
+
+if (value>1) { 
+  moviesData=moviesData.filter( (el) => {
+    return el.rating >= value
+  })
+}
+
+
+if (DataMovie.date>1900){
+  moviesData.push(DataMovie)
+}
+
     return (
-        <div>
+        <div className='movieslist'>
+
             {moviesData.map((movie,i)=>(
-                   <div className='movies' key={movie.id}>
-                   <img  src={movie.image} width='500px' height='500px' alt={movie.name} />
-                   <h2>{movie.rating}</h2>
-                   <h2>{movie.name}</h2>
-                   <h2>{movie.date}</h2>
-                   <h2>{movie.type}</h2>
-                   <h2>{movie.description}</h2>
-                   </div>
+            <MovieCard movie={movie} key={i} handleData={handleData}/>
             ))}
+
         </div>
+        
     )
 }
 

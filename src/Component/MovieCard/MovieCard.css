@@ -1,0 +1,17 @@
+.cardbody{
+    height: 320px;
+    background-image: url("../../assets/backgroud-info-card.jpg");
+}
+
+.movies{
+    margin: 1%;
+}
+
+.movieinfo{
+    font-size: 12px;
+    color: white;
+}
+
+.movietitle{
+    color: #7c9473;
+}

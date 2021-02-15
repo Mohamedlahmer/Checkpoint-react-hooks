@@ -1,31 +1,39 @@
-import MoviesList from './Component/MoviesList'
-import {Navbar, Nav,Form, FormControl,Button} from "react-bootstrap"
-import React from 'react'
+import NavBar from './Component/Navbar/Navbar';
+import Footer from './Component/Footer/Footer';
+import MoviesList from './Component/MovieList/MoviesList';
+import AddMovie from './Component/Addmovie/AddMovie'
+import React, { useState } from 'react'
 import './App.css';
 
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-       <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-info">Search</Button>
-    </Form>
-  </Navbar>
-  </header>
-  <main>
 
-    <MoviesList/>
-  </main>
-  <footer>it's footer part</footer>
+const [Input, setInput] = useState("")
+const handleData = (Input) =>{
+  setInput(Input)
+}
+
+const [value, setValue] = useState(2)
+const handleValue = (value) => {
+  setValue(value)
+}
+
+const [DataMovie, setDataMovie] = useState({})
+
+const handleDataMovie = (DataMovie) =>{
+  setDataMovie(DataMovie)
+}
+
+
+
+
+  return (
+    <div>
+     
+      <NavBar handleData={handleData} handleValue={handleValue}/>
+      <MoviesList Input={Input} value={value} DataMovie={DataMovie}/>
+      <AddMovie handleDataMovie={handleDataMovie}/>
+      <Footer/>
     </div>
   );
 }
