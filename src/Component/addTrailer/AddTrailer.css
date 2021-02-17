@@ -1,0 +1,19 @@
+.description {
+  padding: 3%;
+  font-family: "Reggae One", cursive !important;
+  font-size: 25px !important;
+  color: black;
+  background-color: rgb(145, 141, 141, 0.6);
+  border-bottom-style: hidden;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3%;
+}
+
+.backbtn {
+  margin-top: 20%;
+}
