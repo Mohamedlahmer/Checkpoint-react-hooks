@@ -79,7 +79,11 @@ export default function SearchAppBar({ handledata, handlevalue }) {
 
   return (
     <div className={classes.root}>
+<<<<<<< HEAD
       <AppBar position="fixed" style={{ backgroundColor: "rgb(50, 50, 50)" }}>
+=======
+      <AppBar position="fixed" style={{ backgroundColor: "rgb(45, 45, 45)" }}>
+>>>>>>> b58aae37c98f76ffdedc34d7ce8b9688bbcafdbf
         <Toolbar>
           <Typography
             className={classes.title}
