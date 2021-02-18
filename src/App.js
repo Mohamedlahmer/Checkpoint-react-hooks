@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import AddTrailer from "./Component/addTrailer/AddTrailer";
+import Error from "./Component/Error/Error";
 
 function App() {
   const [Input, setInput] = useState("");
@@ -26,15 +27,16 @@ function App() {
 
   return (
     <div>
+      <NavBar handledata={handledata} handlevalue={handlevalue} />
       <Switch>
         <Route exact path="/">
           {" "}
-          <NavBar handledata={handledata} handlevalue={handlevalue} />
           <MoviesList Input={Input} value={value} DataMovie={DataMovie} />
           <AddMovie handleDataMovie={handleDataMovie} />
           <Footer />
         </Route>
         <Route path="/about/:id" component={AddTrailer} />{" "}
+        <Route path="/*" component={Error} />
       </Switch>
     </div>
   );

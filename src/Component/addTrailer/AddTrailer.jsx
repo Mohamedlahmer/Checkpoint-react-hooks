@@ -10,12 +10,12 @@ const AddTrailer = (props) => {
 
    
 return (
-        <div>
+        <div className='body'>
            
-            <h5 className='description' > Movie description : <hr />  {movie.description}</h5>
             <div className='video'>
-            <ReactPlayer controls url={movie.trailer} />
+            <ReactPlayer className='videobox' controls url={movie.trailer} />
             <div>
+            <h5 className='description' > Synopsis : <br/> {movie.description}</h5>
             <Button className='backbtn' variant="dark" onClick={()=>{props.history.push("/")}}>Back to home page</Button>
             </div>
             </div>
